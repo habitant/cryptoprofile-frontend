@@ -15,14 +15,19 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
+import { Resolution } from "@unstoppabledomains/resolution";
+import Login from "./Login"
 
 import routes from "routes.js";
 
 function Header() {
   const location = useLocation();
+
+  const [address, setAddress] = useState(null);
+
   const mobileSidebarToggle = (e) => {
     e.preventDefault();
     document.documentElement.classList.toggle("nav-open");
@@ -43,6 +48,13 @@ function Header() {
     }
     return "Brand";
   };
+
+  useEffect(async () => {
+    let resolution = new Resolution();
+    let addr = await resolution.addr('nikola-dimov.nft', 'ETH');
+    setAddress(addr);
+  });
+
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -143,7 +155,7 @@ function Header() {
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
               >
-                <span className="no-icon">Account</span>
+                <span className="no-icon">Address: { address }</span>
               </Nav.Link>
             </Nav.Item>
             <Dropdown as={Nav.Item}>
@@ -193,13 +205,7 @@ function Header() {
               </Dropdown.Menu>
             </Dropdown>
             <Nav.Item>
-              <Nav.Link
-                className="m-0"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                <span className="no-icon">Log out</span>
-              </Nav.Link>
+              <Login />
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
