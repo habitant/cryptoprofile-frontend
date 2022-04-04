@@ -5,6 +5,6 @@
 2. Login with Unstoppable API - can be used by site administrators
     - https://docs.unstoppabledomains.com/openapi/loginref/
 
-2. Resolving Domains in Web Applications
+3. Resolving Domains in Web Applications
     - Cannot find a way to get the domain name by UD browser extension, so I can resolve the address of the UD and use it to authenticate as administrator
     - https://docs.unstoppabledomains.com/developer-toolkit/resolve-domains-in-web-applications/
