@@ -16,6 +16,7 @@
 
 */
 import Dashboard from "views/Dashboard.js";
+import Products from "views/Products.js";
 import UserProfile from "views/UserProfile.js";
 import TableList from "views/TableList.js";
 import Typography from "views/Typography.js";
@@ -29,6 +30,13 @@ const dashboardRoutes = [
     name: "Dashboard",
     icon: "nc-icon nc-chart-pie-35",
     component: Dashboard,
+    layout: "/admin",
+  },
+  {
+    path: "/products",
+    name: "Products",
+    icon: "nc-icon nc-grid-45",
+    component: Products,
     layout: "/admin",
   },
   {

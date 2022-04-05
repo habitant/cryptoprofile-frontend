@@ -17,7 +17,8 @@
 */
 import React, { Component } from "react";
 import { useLocation, NavLink } from "react-router-dom";
-import Icon from "react-crypto-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCubesStacked } from '@fortawesome/free-solid-svg-icons'
 import { Nav } from "react-bootstrap";
 
 function Sidebar({ color, image, routes }) {
@@ -37,11 +38,11 @@ function Sidebar({ color, image, routes }) {
         <div className="logo d-flex align-items-center justify-content-start">
           <a className="simple-text logo-mini mx-1">
             <div className="logo-img">
-              <Icon name="btc" size={25} />
+              <FontAwesomeIcon icon={faCubesStacked} />
             </div>
           </a>
           <a className="simple-text">
-            Crypto Profile
+            STABLE FOODS
           </a>
         </div>
         <Nav>
